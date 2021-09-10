@@ -3,8 +3,6 @@ on:
   push:
     branches: 
       - main
-    paths:
-      - "openapi/*.yaml"
 
 jobs:
   dispatch:
