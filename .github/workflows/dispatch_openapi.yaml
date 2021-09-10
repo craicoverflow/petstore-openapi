@@ -3,6 +3,8 @@ on:
   push:
     branches: 
       - main
+    paths:
+      - "petstore.yaml"
 
 jobs:
   dispatch:
