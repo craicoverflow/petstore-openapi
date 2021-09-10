@@ -17,16 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          base: main
-          list-files: json
-          filters: |
-            openapi:
-              - 'openapi/*.yaml'
-      - if: contains(steps.filter.outputs.openapi_files, 'petstore.yaml')
-        name: Petstore OpenAPI changed
+      - name: Petstore OpenAPI changed
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.APP_SERVICES_CI_TOKEN }}
